@@ -118,6 +118,7 @@ const getAllYoutubeThumbnailURLs = (youtubeURL: string): string[] => {
     }
 
     const imageTypes = [
+        "default.jpg",
         "hqdefault.jpg",
         "mqdefault.jpg",
         "sddefault.jpg",

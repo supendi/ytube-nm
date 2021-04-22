@@ -1,6 +1,7 @@
 import { getYoutubeThumbnailURL } from '../index'
 
 const imageTypes = [
+    "default.jpg",
     "hqdefault.jpg",
     "mqdefault.jpg",
     "sddefault.jpg",
@@ -14,7 +15,7 @@ describe("Get single thumbnail by resolution type test", () => {
         const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`
         const actual = getYoutubeThumbnailURL(youtubeUrl)
 
-        const expected = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
+        const expected = `https://img.youtube.com/vi/${videoId}/default.jpg`
 
         expect(actual).toEqual(expected)
     });

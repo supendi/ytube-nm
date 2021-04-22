@@ -6,6 +6,7 @@ describe("Thumbnail urls test", () => {
         const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`
         const actual = getAllYoutubeThumbnailURLs(youtubeUrl)
         const imageTypes = [
+            "default.jpg",
             "hqdefault.jpg",
             "mqdefault.jpg",
             "sddefault.jpg",
