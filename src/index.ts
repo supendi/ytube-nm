@@ -105,12 +105,12 @@ const getYoutubeVideoId = (youtubeURL: string): string | null => {
 }
 
 /**
- * Returns the url of youtube thumbnail
+ * Returns the urls of youtube thumbnail
  * @param youtubeURL the youtube url
  * @param thumbnailType the resolution options
  * @returns 
  */
-const getYoutubeThumbnailURLs = (youtubeURL: string): string[] => {
+const getAllYoutubeThumbnailURLs = (youtubeURL: string): string[] => {
     const urls: string[] = []
     const videoId = getYoutubeVideoId(youtubeURL)
     if (!videoId) {
@@ -134,23 +134,22 @@ const getYoutubeThumbnailURLs = (youtubeURL: string): string[] => {
     return urls;
 }
 
-
 /**
- * Returns the url of youtube thumbnail
+ * Returns the url of youtube thumbnail by specified resolution type
  * @param youtubeURL the youtube url
- * @param thumbnailType the resolution options
+ * @param resolutionType the resolution options
  * @returns 
  */
-const getYoutubeThumbnailURL = (youtubeURL: string, thumbnailType: "default" | "hq" | "mq" | "sd" | "max" = "default"): string => {
+const getYoutubeThumbnailURL = (youtubeURL: string, resolutionType: "default" | "hq" | "mq" | "sd" | "max" = "default"): string => {
     const arr = youtubeURL.split("=")
     if (arr && arr.length > 1) {
         const videoId = arr[1]
         let urlTemplate = `https://img.youtube.com/vi/${videoId}/`
-        if (thumbnailType === "default") {
+        if (resolutionType === "default") {
             return urlTemplate + "default.jpg"
         }
         let imageType = ""
-        switch (thumbnailType) {
+        switch (resolutionType) {
             case "hq":
                 imageType = "hqdefault.jpg"
                 break;
@@ -187,5 +186,5 @@ export {
     isYtEmbedURL,
     isYtShortenedURL,
     getYoutubeSplitter,
-    getYoutubeThumbnailURLs
+    getAllYoutubeThumbnailURLs
 }

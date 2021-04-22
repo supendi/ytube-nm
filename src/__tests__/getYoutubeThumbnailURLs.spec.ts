@@ -1,10 +1,10 @@
-import { getYoutubeThumbnailURLs } from '../index'
+import { getAllYoutubeThumbnailURLs } from '../index'
 
 describe("Thumbnail urls test", () => {
     test("it should return thumbnails urls", () => {
         const videoId = "6XBpQvFEfTk"
         const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`
-        const actual = getYoutubeThumbnailURLs(youtubeUrl)
+        const actual = getAllYoutubeThumbnailURLs(youtubeUrl)
         const imageTypes = [
             "hqdefault.jpg",
             "mqdefault.jpg",
