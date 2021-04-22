@@ -1,3 +1,5 @@
+import fetch from 'node-fetch'
+
 const normalSignature = "/watch?v="
 const embedSignature = "/embed/"
 const shortenedSignature = "youtu.be/"
@@ -135,8 +137,6 @@ const getAllYoutubeThumbnailURLs = (youtubeURL: string): string[] => {
     return urls;
 }
 
-
-
 /**
  * Returns the url of youtube thumbnail by specified resolution type
  * @param youtubeURL the youtube url
@@ -175,14 +175,14 @@ const getYoutubeThumbnailURL = (youtubeURL: string, resolutionType: RESOLUTION_T
     return urlTemplate + imageType
 }
 
-const thumbnailIsNotFound = async (thumbailURL: string) => {
-    return !(await fetch(thumbailURL)).ok
+const thumbnailIsAvailable = async (thumbailURL: string) => {
+    return (await fetch(thumbailURL)).status === 200
 }
 
 export {
     getYoutubeVideoId,
     getYoutubeThumbnailURL,
-    thumbnailIsNotFound,
+    thumbnailIsAvailable,
     isYoutubeURL,
     getYoutubeMatches,
     isYtNormalURL,
