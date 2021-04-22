@@ -11,7 +11,6 @@ describe("Thumbnail urls test", () => {
             "mqdefault.jpg",
             "sddefault.jpg",
             "maxresdefault.jpg",
-            "mqdefault.jpg"
         ]
         const expected = []
         for (let index = 0; index < imageTypes.length; index++) {

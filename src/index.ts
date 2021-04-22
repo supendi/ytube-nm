@@ -122,8 +122,7 @@ const getAllYoutubeThumbnailURLs = (youtubeURL: string): string[] => {
         "hqdefault.jpg",
         "mqdefault.jpg",
         "sddefault.jpg",
-        "maxresdefault.jpg",
-        "mqdefault.jpg"
+        "maxresdefault.jpg"
     ]
 
     let urlTemplate = `https://img.youtube.com/vi/${videoId}/`
@@ -166,7 +165,7 @@ const getYoutubeThumbnailURL = (youtubeURL: string, resolutionType: "default" | 
             imageType = "maxresdefault.jpg"
             break;
         default:
-            imageType = "mqdefault.jpg"
+            imageType = "default.jpg"
             break;
     }
 
