@@ -1,5 +1,5 @@
 {
-    "name": "ythumb-nm",
+    "name": "ytube-nm",
     "version": "1.0.0",
     "description": "Get youtube thumbnails",
     "main": "dist/index.ts",
@@ -14,7 +14,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/supendi/ythumb-nm.git"
+        "url": "git+https://github.com/supendi/ytube-nm.git"
     },
     "keywords": [
         "youtube",
@@ -23,9 +23,9 @@
     "author": "github.com/supendi",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/supendi/ythumb-nm/issues"
+        "url": "https://github.com/supendi/ytube-nm/issues"
     },
-    "homepage": "https://github.com/supendi/ythumb-nm#readme",
+    "homepage": "https://github.com/supendi/ytube-nm#readme",
     "devDependencies": {
         "@babel/core": "^7.13.16",
         "@babel/preset-env": "^7.13.15",
