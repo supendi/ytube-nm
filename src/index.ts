@@ -1,7 +1,7 @@
 const normalSignature = "/watch?v="
 const embedSignature = "/embed/"
 const shortenedSignature = "youtu.be/"
-export type RES_TYPE = "default" | "hqdefault" | "mqdefault" | "sddefault" | "maxresdefault"
+export type RESOLUTION_TYPE = "default" | "hqdefault" | "mqdefault" | "sddefault" | "maxresdefault"
 
 /**
  * Returns the youtube regex matches
@@ -143,7 +143,7 @@ const getAllYoutubeThumbnailURLs = (youtubeURL: string): string[] => {
  * @param resolutionType the resolution options
  * @returns 
  */
-const getYoutubeThumbnailURL = (youtubeURL: string, resolutionType: RES_TYPE = "default"): string => {
+const getYoutubeThumbnailURL = (youtubeURL: string, resolutionType: RESOLUTION_TYPE = "default"): string => {
     const videoId = getYoutubeVideoId(youtubeURL)
     if (!videoId) {
         return null
