@@ -110,6 +110,37 @@ const getYoutubeVideoId = (youtubeURL: string): string | null => {
  * @param thumbnailType the resolution options
  * @returns 
  */
+const getYoutubeThumbnailURLs = (youtubeURL: string): string[] => {
+    const urls: string[] = []
+    const videoId = getYoutubeVideoId(youtubeURL)
+    if (!videoId) {
+        return null
+    }
+
+    const imageTypes = [
+        "hqdefault.jpg",
+        "mqdefault.jpg",
+        "sddefault.jpg",
+        "maxresdefault.jpg",
+        "mqdefault.jpg"
+    ]
+
+    let urlTemplate = `https://img.youtube.com/vi/${videoId}/`
+
+    for (let index = 0; index < imageTypes.length; index++) {
+        const imageType = imageTypes[index];
+        urls.push(urlTemplate + imageType)
+    }
+    return urls;
+}
+
+
+/**
+ * Returns the url of youtube thumbnail
+ * @param youtubeURL the youtube url
+ * @param thumbnailType the resolution options
+ * @returns 
+ */
 const getYoutubeThumbnailURL = (youtubeURL: string, thumbnailType: "default" | "hq" | "mq" | "sd" | "max" = "default"): string => {
     const arr = youtubeURL.split("=")
     if (arr && arr.length > 1) {
@@ -155,5 +186,6 @@ export {
     isYtNormalURL,
     isYtEmbedURL,
     isYtShortenedURL,
-    getYoutubeSplitter
+    getYoutubeSplitter,
+    getYoutubeThumbnailURLs
 }

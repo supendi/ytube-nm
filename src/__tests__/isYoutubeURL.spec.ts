@@ -1,6 +1,5 @@
 import { isYoutubeURL } from '../index'
 describe("Is youtube url", () => {
-    //https://youtu.be/Ek0SgwWmF9w
     test("it should return true youtube url", () => {
         const urls = [
             "https://www.youtube.com/watch?v=6XBpQvFEfTk",
