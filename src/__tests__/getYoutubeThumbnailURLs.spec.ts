@@ -19,4 +19,12 @@ describe("Thumbnail urls test", () => {
         }
         expect(actual).toEqual(expected)
     });
+
+    test("it should return thumbnails urls", () => {
+        const videoId = "6XBpQvFEfTk"
+        const youtubeUrl = `https://www.youtubesss.com/watch?v=${videoId}`
+        const actual = getAllYoutubeThumbnailURLs(youtubeUrl)
+        const expected = null
+        expect(actual).toEqual(expected)
+    });
 });

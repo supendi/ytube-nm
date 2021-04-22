@@ -141,35 +141,35 @@ const getAllYoutubeThumbnailURLs = (youtubeURL: string): string[] => {
  * @returns 
  */
 const getYoutubeThumbnailURL = (youtubeURL: string, resolutionType: "default" | "hq" | "mq" | "sd" | "max" = "default"): string => {
-    const arr = youtubeURL.split("=")
-    if (arr && arr.length > 1) {
-        const videoId = arr[1]
-        let urlTemplate = `https://img.youtube.com/vi/${videoId}/`
-        if (resolutionType === "default") {
-            return urlTemplate + "default.jpg"
-        }
-        let imageType = ""
-        switch (resolutionType) {
-            case "hq":
-                imageType = "hqdefault.jpg"
-                break;
-            case "mq":
-                imageType = "mqdefault.jpg"
-                break;
-            case "sd":
-                imageType = "sddefault.jpg"
-                break;
-            case "max":
-                imageType = "maxresdefault.jpg"
-                break;
-            default:
-                imageType = "mqdefault.jpg"
-                break;
-        }
-
-        return urlTemplate + imageType
+    const videoId = getYoutubeVideoId(youtubeURL)
+    if (!videoId) {
+        return ""
     }
-    return ""
+
+    let urlTemplate = `https://img.youtube.com/vi/${videoId}/`
+    if (resolutionType === "default") {
+        return urlTemplate + "default.jpg"
+    }
+    let imageType = ""
+    switch (resolutionType) {
+        case "hq":
+            imageType = "hqdefault.jpg"
+            break;
+        case "mq":
+            imageType = "mqdefault.jpg"
+            break;
+        case "sd":
+            imageType = "sddefault.jpg"
+            break;
+        case "max":
+            imageType = "maxresdefault.jpg"
+            break;
+        default:
+            imageType = "mqdefault.jpg"
+            break;
+    }
+
+    return urlTemplate + imageType
 }
 
 const thumbnailIsNotFound = async (thumbailURL: string) => {
