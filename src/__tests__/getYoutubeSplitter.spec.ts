@@ -2,7 +2,7 @@ import { getYoutubeSplitter } from '../index'
 
 const normalSignature = "/watch?v="
 const embedSignature = "/embed/"
-const shortenedSignature = "youtu.be"
+const shortenedSignature = "youtu.be/"
 
 describe("Get youtube string splitter", () => {
     test("it should returns short splitter", () => {

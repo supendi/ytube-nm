@@ -1,6 +1,6 @@
 const normalSignature = "/watch?v="
 const embedSignature = "/embed/"
-const shortenedSignature = "youtu.be"
+const shortenedSignature = "youtu.be/"
 
 /**
  * Returns the youtube regex matches
@@ -61,7 +61,7 @@ const isYtShortenedURL = (youtubeURL: string): boolean => {
     if (!isYoutube) {
         return false
     }
-    return getYoutubeMatches(youtubeURL).includes(shortenedSignature)
+    return getYoutubeMatches(youtubeURL).includes("youtu.be")
 }
 
 /**
@@ -96,7 +96,6 @@ const getYoutubeVideoId = (youtubeURL: string): string | null => {
     }
 
     const splittedStr = youtubeURL.split(splitter)
-    console.log(splittedStr)
     if (splittedStr && splittedStr.length > 1) {
         const videoId = splittedStr[1]
         return videoId

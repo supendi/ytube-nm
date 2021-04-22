@@ -10,7 +10,7 @@ describe("Get video id function", () => {
             const url = urls[index];
             const expectedVideoId = "6XBpQvFEfTk"
             const actualVideoId = getYoutubeVideoId(url)
-            expect(actualVideoId).toEqual(expectedVideoId) 
-        } 
+            expect(actualVideoId).toEqual(expectedVideoId)
+        }
     });
 });
