@@ -175,8 +175,25 @@ const getYoutubeThumbnailURL = (youtubeURL: string, resolutionType: RESOLUTION_T
     return urlTemplate + imageType
 }
 
-const thumbnailIsAvailable = async (thumbailURL: string) => {
+const thumbnailIsAvailable = async (thumbailURL: string): Promise<boolean> => {
     return (await fetch(thumbailURL)).status === 200
+}
+
+const getAvailableThumbnails = async (youtubeURL: string): Promise<string[]> => {
+    const thumbailURLs = getAllYoutubeThumbnailURLs(youtubeURL)
+    if (!thumbailURLs) {
+        return null
+    }
+
+    const availableThumbnails: string[] = []
+    for (let index = 0; index < thumbailURLs.length; index++) {
+        const thumbailURL = thumbailURLs[index];
+        const isAvailable = await thumbnailIsAvailable(thumbailURL)
+        if (isAvailable) {
+            availableThumbnails.push(thumbailURL)
+        }
+    }
+    return availableThumbnails
 }
 
 export {
@@ -189,5 +206,6 @@ export {
     isYtEmbedURL,
     isYtShortenedURL,
     getYoutubeSplitter,
-    getAllYoutubeThumbnailURLs
+    getAllYoutubeThumbnailURLs,
+    getAvailableThumbnails
 }
