@@ -2,8 +2,8 @@
     "name": "ytube-nm",
     "version": "1.0.4",
     "description": "Get youtube thumbnails",
-    "main": "/dist/index.ts",
-    "types": "/dist/index.d.ts",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "files": [
         "/dist"
     ],
