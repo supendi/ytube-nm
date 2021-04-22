@@ -1,6 +1,7 @@
 const normalSignature = "/watch?v="
 const embedSignature = "/embed/"
 const shortenedSignature = "youtu.be/"
+export type RES_TYPE = "default" | "hqdefault" | "mqdefault" | "sddefault" | "maxresdefault"
 
 /**
  * Returns the youtube regex matches
@@ -134,13 +135,15 @@ const getAllYoutubeThumbnailURLs = (youtubeURL: string): string[] => {
     return urls;
 }
 
+
+
 /**
  * Returns the url of youtube thumbnail by specified resolution type
  * @param youtubeURL the youtube url
  * @param resolutionType the resolution options
  * @returns 
  */
-const getYoutubeThumbnailURL = (youtubeURL: string, resolutionType: "default" | "hq" | "mq" | "sd" | "max" = "default"): string => {
+const getYoutubeThumbnailURL = (youtubeURL: string, resolutionType: RES_TYPE = "default"): string => {
     const videoId = getYoutubeVideoId(youtubeURL)
     if (!videoId) {
         return ""
@@ -152,16 +155,16 @@ const getYoutubeThumbnailURL = (youtubeURL: string, resolutionType: "default" | 
     }
     let imageType = ""
     switch (resolutionType) {
-        case "hq":
+        case "hqdefault":
             imageType = "hqdefault.jpg"
             break;
-        case "mq":
+        case "mqdefault":
             imageType = "mqdefault.jpg"
             break;
-        case "sd":
+        case "sddefault":
             imageType = "sddefault.jpg"
             break;
-        case "max":
+        case "maxresdefault":
             imageType = "maxresdefault.jpg"
             break;
         default:
