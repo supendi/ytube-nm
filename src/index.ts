@@ -146,7 +146,7 @@ const getAllYoutubeThumbnailURLs = (youtubeURL: string): string[] => {
 const getYoutubeThumbnailURL = (youtubeURL: string, resolutionType: RES_TYPE = "default"): string => {
     const videoId = getYoutubeVideoId(youtubeURL)
     if (!videoId) {
-        return ""
+        return null
     }
 
     let urlTemplate = `https://img.youtube.com/vi/${videoId}/`

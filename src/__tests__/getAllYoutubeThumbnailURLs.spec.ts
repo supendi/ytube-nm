@@ -20,7 +20,7 @@ describe("Thumbnail urls test", () => {
         expect(actual).toEqual(expected)
     });
 
-    test("it should return thumbnails urls", () => {
+    test("it should return null", () => {
         const videoId = "6XBpQvFEfTk"
         const youtubeUrl = `https://www.youtubesss.com/watch?v=${videoId}`
         const actual = getAllYoutubeThumbnailURLs(youtubeUrl)
