@@ -1,5 +1,3 @@
-import fetch from 'node-fetch'
-
 const normalSignature = "/watch?v="
 const embedSignature = "/embed/"
 const shortenedSignature = "youtu.be/"

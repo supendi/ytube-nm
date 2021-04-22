@@ -1,3 +1,5 @@
+global.fetch = require('node-fetch')
+
 import { thumbnailIsAvailable, getAllYoutubeThumbnailURLs } from '../index'
 
 describe("Thumbnail is available test", () => {
