@@ -147,4 +147,14 @@ const thumbnailIsNotFound = async (thumbailURL: string) => {
     return !(await fetch(thumbailURL)).ok
 }
 
-export { getYoutubeVideoId, getYoutubeThumbnailURL, thumbnailIsNotFound, isYoutubeURL, getYoutubeMatches, isYtNormalURL, isYtEmbedURL, isYtShortenedURL }
+export {
+    getYoutubeVideoId,
+    getYoutubeThumbnailURL,
+    thumbnailIsNotFound,
+    isYoutubeURL,
+    getYoutubeMatches,
+    isYtNormalURL,
+    isYtEmbedURL,
+    isYtShortenedURL,
+    getYoutubeSplitter
+}
