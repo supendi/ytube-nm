@@ -2,9 +2,11 @@
 A Javascript tool for getting the youtube thumbnail urls.
 
 
-### How to Use
+## How to Use
 <br />
-**This is bold text**
+
+**Example 1**
+
 ```javascript
 import { getYoutubeThumbnailURL, RESOLUTION_TYPE } from 'ytube-nm'
 
