@@ -45,7 +45,8 @@ const thumbnails = getAllYoutubeThumbnailURLs(youtubeUrl)
 ```
 
 **Example 4: Check if the thumbnail is available**
-Some youtube videos dont have all of the tumbnail types
+
+Because some youtube videos don't have all the tumbnail types
 ```javascript
 import { thumbnailIsAvailable } from 'ytube-nm'
 
