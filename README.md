@@ -49,7 +49,7 @@ Some youtube videos dont have all of the tumbnail types
 ```javascript
 import { thumbnailIsAvailable } from 'ytube-nm'
 
-const youtubeUrl = "https://www.youtube.com/watch?v=6XBpQvFEfTk" 
+const youtubeUrl = "https://img.youtube.com/vi/6XBpQvFEfTk/default.jpg" 
 const isAvailable = thumbnailIsAvailable(url) //return a promise of boolean
 ```
 
