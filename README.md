@@ -12,7 +12,7 @@ export type RESOLUTION_TYPE = "default" | "hqdefault" | "mqdefault" | "sddefault
 
 **Example 1 : Get a single url**
 ```javascript
-import { getYoutubeThumbnailURL, RESOLUTION_TYPE } from 'ytube-nm'
+import { getYoutubeThumbnailURL } from 'ytube-nm'
 
 const youtubeUrl = "https://www.youtube.com/watch?v=6XBpQvFEfTk"
 //the "default" argument is the resolution type
@@ -21,7 +21,7 @@ const thumbnail = getYoutubeThumbnailURL(youtubeUrl, "default") //https://img.yo
 
 **Example 2: Get a single url**
 ```javascript
-import { getYoutubeThumbnailURL, RESOLUTION_TYPE } from 'ytube-nm'
+import { getYoutubeThumbnailURL } from 'ytube-nm'
 
 const youtubeUrl = "https://www.youtube.com/watch?v=6XBpQvFEfTk"
 //the "hqdefault" argument is the resolution type
